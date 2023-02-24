@@ -14,7 +14,7 @@
  */
 function invertTree(root) {
   if (root) {
-      _invert(root);
+    _invert(root);
   }
 
   function _invert(node) {

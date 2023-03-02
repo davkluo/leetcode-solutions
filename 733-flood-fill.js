@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @param {number[][]} image
  * @param {number} sr

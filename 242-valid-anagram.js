@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @param {string} s
  * @param {string} t

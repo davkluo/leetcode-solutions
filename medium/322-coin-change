@@ -1,0 +1,55 @@
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+// function coinChange(coins, amount) {
+//     if (amount === 0) return 0;
+
+//     let minCoins = {};
+//     for (let coin of coins) {
+//         minCoins[coin] = 1;
+//     }
+
+//     for (let i = 1; i <= amount; i++) {
+//         if (i in minCoins) continue;
+
+//         let possibleQtys = [];
+//         for (let coin of coins) {
+//             if ((i - coin) in minCoins) possibleQtys.push(minCoins[i - coin]);
+//         }
+
+//         if (possibleQtys.length > 0) minCoins[i] = Math.min(...possibleQtys) + 1;
+//     }
+
+//     if (!(amount in minCoins)) return -1;
+
+//     return minCoins[amount];
+// };
+
+// BFS approach
+function coinChange(coins, amount) {
+    if (amount === 0) return 0;
+
+    let queue = [[amount, 0]];
+    let seen = new Set([amount]);
+
+    while (queue.length) {
+        const [currAmount, currCount] = queue.shift();
+
+        for (let coin of coins) {
+            const nextAmount = currAmount - coin;
+
+            if (nextAmount === 0) return currCount + 1;
+
+            if (nextAmount < 0) continue;
+
+            if (!seen.has(currAmount - coin)) {
+                seen.add(currAmount - coin);
+                queue.push([currAmount - coin, currCount + 1])
+            }
+        }
+    }
+
+    return -1;
+}

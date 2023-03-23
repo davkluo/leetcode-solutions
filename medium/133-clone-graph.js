@@ -55,3 +55,27 @@ function cloneGraph(node) {
 
   return nodeMap[1];
 };
+
+// More compact approach:
+// function cloneGraph(node) {
+//   if (!node) return node;
+
+//   let nodeMap = {};
+//   let stack = [node];
+//   nodeMap[node.val] = new Node(node.val);
+
+//   while (stack.length) {
+//     const { val, neighbors } = stack.pop();
+
+//     for (let neighbor of neighbors) {
+//         if (!(neighbor.val in nodeMap)) {
+//             nodeMap[neighbor.val] = new Node(neighbor.val);
+//             stack.push(neighbor);
+//         }
+
+//         nodeMap[val].neighbors.push(nodeMap[neighbor.val]);
+//     }
+//   }
+
+//   return nodeMap[node.val];
+// };

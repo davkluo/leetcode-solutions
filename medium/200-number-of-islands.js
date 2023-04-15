@@ -23,7 +23,7 @@ function numIslands(grid) {
     if (i > 0 && grid[i-1][j] === '1') convertLandToWater(i-1, j);
     if (j > 0 && grid[i][j-1] === '1') convertLandToWater(i, j-1);
     if (i < grid.length - 1 && grid[i+1][j] === '1') convertLandToWater(i+1, j);
-    if (j < grid.length - 1 && grid[i][j+1] === '1') convertLandToWater(i, j+1);
+    if (j < grid[0].length - 1 && grid[i][j+1] === '1') convertLandToWater(i, j+1);
   }
 
   return numberOfIslands;

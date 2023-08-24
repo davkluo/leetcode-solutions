@@ -1,4 +1,5 @@
 /** Given an array of stock prices, determine the best time to buy and sell
+ *
  * @param {number[]} prices
  * @returns {number}
  */

@@ -15,6 +15,7 @@ function twoSum(nums: number[], target: number): number[] {
 
     if (remainder in numToIndex) {
       targetIndices = [i, numToIndex[remainder]];
+      break;
     }
 
     numToIndex[num] = i;
@@ -22,3 +23,5 @@ function twoSum(nums: number[], target: number): number[] {
 
   return targetIndices;
 }
+
+// Time: O(n), Space: O(n)

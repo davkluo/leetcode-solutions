@@ -8,14 +8,12 @@
 function rob(nums: number[]): number {
   if (nums.length === 1) return nums[0];
 
-  function helper(nums: number[]): number {
-    if (nums.length === 1) return nums[0];
-
+  function _rob(startIndex: number, endIndex: number): number {
     let rob1 = 0;
     let rob2 = 0;
 
-    for (const num of nums) {
-      const money = Math.max(rob1 + num, rob2);
+    for (let i = startIndex; i < endIndex; i++) {
+      const money = Math.max(rob1 + nums[i], rob2);
       rob1 = rob2;
       rob2 = money;
     }
@@ -23,10 +21,7 @@ function rob(nums: number[]): number {
     return rob2;
   }
 
-  return Math.max(
-    helper(nums.slice(0, nums.length - 1)),
-    helper(nums.slice(1))
-  );
+  return Math.max(_rob(1, nums.length), _rob(0, nums.length - 1));
 }
 
 // Time: O(n), Space: O(1)

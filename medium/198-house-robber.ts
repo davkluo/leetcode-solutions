@@ -1,15 +1,10 @@
-// function rob(nums: number[]): number {
-//   const dp = [nums[0]];
-
-//   for (let i = 1; i < nums.length; i++) {
-//     const money = nums[i];
-//     dp[i] = Math.max(dp[i - 1], i - 2 >= 0 ? dp[i - 2] + money : money);
-//   }
-
-//   return dp[nums.length - 1];
-// }
-
-// Solution with O(1) space
+/** Given an integer array representing the amount of money at each house,
+ *  returns the maximum amount of money that can be robbed if no two adjacent
+ *  houses can be robbed.
+ *
+ * @param {number[]} nums
+ * @returns {number}
+ */
 function rob(nums: number[]): number {
   if (nums.length === 1) return nums[0];
 
@@ -24,3 +19,5 @@ function rob(nums: number[]): number {
 
   return rob2;
 }
+
+// Time: O(n), Space: O(1)

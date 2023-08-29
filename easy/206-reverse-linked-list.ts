@@ -32,3 +32,5 @@ function reverseList(head: ListNode | null): ListNode | null {
 
   return prev;
 }
+
+// Time: O(n), Space: O(1)

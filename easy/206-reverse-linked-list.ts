@@ -17,7 +17,7 @@ class ListNode {
  * @returns {ListNode | null}
  */
 function reverseList(head: ListNode | null): ListNode | null {
-  if (!head) return head;
+  if (!head || !head.next) return head;
 
   let prev: ListNode | null = null;
   let next: ListNode | null = head.next;

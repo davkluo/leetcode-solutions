@@ -1,8 +1,9 @@
 /** Given a sorted array of numbers and a target value, returns the index of the
  *  target value if it exists, otherwise -1
  *
- * @param nums
- * @param target
+ * @param {number[]} nums
+ * @param {number} target
+ * @returns {number}
  */
 function search(nums: number[], target: number): number {
   let l = 0;

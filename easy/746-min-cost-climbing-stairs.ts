@@ -21,3 +21,5 @@ function minCostClimbingStairs(cost: number[]): number {
 
   return Math.min(oneBehindCost, twoBehindCost);
 }
+
+// Time: O(n), Space: O(1)

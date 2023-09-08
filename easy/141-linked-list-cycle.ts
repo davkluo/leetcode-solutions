@@ -10,6 +10,12 @@ class ListNode {
   }
 }
 
+/**
+ * Given the head of a linked list, return true if it has a cycle
+ *
+ * @param {ListNode | null} head
+ * @returns {boolean}
+ */
 function hasCycle(head: ListNode | null): boolean {
   if (!head) return false;
 

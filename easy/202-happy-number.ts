@@ -54,3 +54,32 @@ function isHappy(n: number): boolean {
   with the input, and for larger input sizes it quickly becomes effectively
   constant.
 */
+
+/**
+ * Two-pointer alternative using Floyd's cycle finding algorithm
+ */
+// function isHappy(n: number): boolean {
+//   let slow = n;
+//   let fast = n;
+
+//   while (slow !== 1 && fast !== 1) {
+//       slow = sumSquareOfDigits(slow);
+//       fast = sumSquareOfDigits(sumSquareOfDigits(fast));
+
+//       if (slow === fast) return slow === 1;
+//   }
+
+//   return true;
+// };
+
+/*
+  Time: O(log n) as with the above solution. Even though we are nesting calls
+  to sumSquareOfDigits, they occur sequentially in a sense that the result of
+  one call is then passed to the next. This results in a runtime of
+  O(log (n1 + n2)). Keep in mind that sumSquareOfDigits tends to return
+  relatively small numbers, especially compared to large inputs, and this can be
+  simplified to a logarithmic time complexity. For the same reasons as above,
+  the number of iterations of the while loop can be considered constant.
+
+  Space: O(1) since we are using two pointers and not a hash set.
+*/

@@ -2,10 +2,10 @@ from typing import List
 
 def contains_duplicate(nums: List[int]) -> bool:
     """
-        Given an array of integers, returns True if there are duplicates and
-        False otherwise.
+    Given an array of integers, returns True if there are duplicates and
+    False otherwise.
 
-        e.g. contains_duplicate([1,2,3,1]) -> True
+    e.g. contains_duplicate([1,2,3,1]) -> True
     """
 
     seen = set()

@@ -1,4 +1,10 @@
 def longestCommonSubsequence(text1: str, text2: str) -> int:
+    """
+    Given two strings, return the length of the longest common subsequence.
+
+    e.g. longestCommonSubsequence("abcde", "ace") -> 3
+    """
+
     h, w = len(text1) + 1, len(text2) + 1
     dp = [[0 for _w in range(w)] for _h in range(h)]
 
